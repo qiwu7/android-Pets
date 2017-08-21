@@ -52,9 +52,6 @@ public class EditorActivity extends AppCompatActivity {
     /** EditText field to enter the pet's gender */
     private Spinner mGenderSpinner;
 
-    // To access our database, we instantiate our subclass of SQLiteOpenHelper
-    // and pass the context, which is the current activity.
-    private PetDbHelper mDbHelper;
 
     /**
      * Gender of the pet. The possible values are:
@@ -66,8 +63,6 @@ public class EditorActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editor);
-
-        mDbHelper = new PetDbHelper(this);
 
         // Find all relevant views that we will need to read user input from
         mNameEditText = (EditText) findViewById(R.id.edit_pet_name);
