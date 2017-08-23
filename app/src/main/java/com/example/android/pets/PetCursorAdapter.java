@@ -10,10 +10,6 @@ import android.widget.TextView;
 
 import com.example.android.pets.data.PetContract;
 
-/**
- * Created by mscec on 2017/8/18.
- */
-
 public class PetCursorAdapter extends CursorAdapter {
 
     public PetCursorAdapter(Context context, Cursor c) {
@@ -42,6 +38,9 @@ public class PetCursorAdapter extends CursorAdapter {
         // Extract properties from cursor
         String name = cursor.getString(cursor.getColumnIndexOrThrow(PetContract.PetEntry.COLUMN_PET_NAME));
         String breed = cursor.getString(cursor.getColumnIndexOrThrow(PetContract.PetEntry.COLUMN_PET_BREED));
+        if (breed.isEmpty()) {
+            breed = context.getString(R.string.unknown_breed);
+        }
         // Populate fields with extracted properties
         nameTextView.setText(name);
         summaryTextView.setText(breed);

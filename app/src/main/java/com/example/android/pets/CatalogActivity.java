@@ -153,39 +153,6 @@ public class CatalogActivity extends AppCompatActivity implements LoaderManager.
         }
     }
 
-    /**
-     * Temporary helper method to display information in the onscreen TextView about the state of
-     * the pets database.
-     */
-//    private void displayDatabaseInfo() {
-//        String[] projection = new String[] {
-//                PetEntry._ID,
-//                PetEntry.COLUMN_PET_NAME,
-//                PetEntry.COLUMN_PET_BREED,
-//                PetEntry.COLUMN_PET_GENDER,
-//                PetEntry.COLUMN_PET_WEIGHT
-//        };
-//
-//        Cursor cursor = getContentResolver().query(
-//                PetEntry.CONTENT_URI,
-//                projection,
-//                null,
-//                null,
-//                null,
-//                null);
-//
-//        ListView petListView = (ListView) findViewById(R.id.list_view_pet);
-//
-//        PetCursorAdapter petCursorAdapter = new PetCursorAdapter(this, cursor);
-//
-//        petListView.setAdapter(petCursorAdapter);
-//
-//        // Find and set empty view on the ListView, so that it only shows when the list has 0 items.
-//        View emptyView = findViewById(R.id.empty_view);
-//        petListView.setEmptyView(emptyView);
-//
-//    }
-
     @Override
     public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
         // Prepare the loader.  Either re-connect with an existing one,
